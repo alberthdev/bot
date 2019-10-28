@@ -53,7 +53,8 @@ class ModLog(Cog, name="ModLog"):
                         'author': message.author.id,
                         'channel_id': message.channel.id,
                         'content': message.content,
-                        'embeds': [embed.to_dict() for embed in message.embeds]
+                        'embeds': [embed.to_dict() for embed in message.embeds],
+                        'attachments': [attachment.proxy_url for attachment in message.attachments],
                     }
                     for message in messages
                 ]
